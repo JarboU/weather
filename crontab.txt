@@ -1,0 +1,11 @@
+# 每天早上8点和晚上10点发送常规天气信息
+0 8,22 * * * /data/python/bin/python3 /data/code/weather/weather_notify.py --forecast >> /data/code/weather/logs/weather.log 2>&1
+
+# 每天早上8点和晚上10点发送常规天气信息
+30 8 * * * /data/python/bin/python3 /data/code/weather/weather_notify.py --life >> /data/code/weather/logs/weather.log 2>&1
+
+# 每小时检查降水情况（早8点到晚10点之间）
+0 8-22 * * * /data/python/bin/python3 /data/code/weather/weather_notify.py --rain >> /data/code/weather/logs/weather.log 2>&1
+
+# 每小时检查降水情况（早8点到晚10点之间）
+0 8-22 * * * /data/python/bin/python3 /data/code/weather/weather_notify.py --check_rain >> /data/code/weather/logs/weather.log 2>&1
